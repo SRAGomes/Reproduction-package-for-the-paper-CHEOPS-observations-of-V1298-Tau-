@@ -25,6 +25,3 @@ To run the scripts in this package, the following software has been used:
     * The dissipative section, where the contribution from the stellar and planetary contributions; the past and future evolutionary tracks considering a toy model for the radial contraction.
 * The forced_eccentricity.py script contains the functions fot the conservative section of the paper, using the Rebound N-body code.
 
-
-
-https://github.com/SRAGomes/Reproduction-package-for-the-paper-CHEOPS-observations-of-V1298-Tau-.git
