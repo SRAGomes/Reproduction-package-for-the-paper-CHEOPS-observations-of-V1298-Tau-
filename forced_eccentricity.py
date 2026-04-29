@@ -2,6 +2,9 @@ import rebound
 import numpy as np
 
 
+######################################################
+############### Conservative functions ###############
+######################################################
 def forced(T_total, n_points):
     # ---------- PARAMETERS ----------
     # Units: years, AU, solar mass
@@ -119,4 +122,11 @@ def resonance(T_total, n_points,e0):
             Omega[p,i] = orbit.Omega
 
     return times , a , e, n, l, w, Omega
+
+def AMD(mass, mass_Star, P, e):
+    inc = np.array([1,1,1,1])*1
+    a=(P**2*(mass_Star+mass))**(1/3)
+    angular_momentum_deficit =np.sum( mass * np.sqrt( a ) * ( 1 - np.sqrt( 1- e**2) *np.cos(inc*np.pi/180) ) )
+    normalized_angular_momentum_deficit = angular_momentum_deficit / np.sum ( mass * np.sqrt( a ) )
+    return normalized_angular_momentum_deficit
    
